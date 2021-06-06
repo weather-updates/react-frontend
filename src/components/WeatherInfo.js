@@ -88,8 +88,8 @@ const WeatherInfo = ({weatherData}) => {
                 </TemperatureFormControl>
             </div>
             <div className="carousel">
-                {startDay > 0 ? <ArrowBack onClick={backArrowClick}/> : <div/>}
-                {startDay + 2 < 4 ? <ArrowForward onClick={forwardArrowClick}/> : <div/>}
+                {startDay > 0 ? <ArrowBack className="arrow-back" onClick={backArrowClick}/> : <div/>}
+                {startDay + 2 < 4 ? <ArrowForward className="arrow-forward" onClick={forwardArrowClick}/> : <div/>}
             </div>
             <div className="temperature-container">
                 {Object.keys(weatherData).map((date, i) => {

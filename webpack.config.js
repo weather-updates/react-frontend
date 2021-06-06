@@ -5,7 +5,6 @@ let config =  {
     entry: path.resolve(__dirname, "src", "index.js"),
     output: {
         path: path.resolve(__dirname, "build"),
-        publicPath: '/react-frontend/'
     },
     devServer: {
         historyApiFallback: true,
@@ -36,6 +35,9 @@ module.exports = (env, argv) => {
     let mode = (argv.mode === 'production') ? 'production': 'development'
     return {
         ...config,
+        output: {
+            publicPath: mode==='development' ? '/' : '/react-frontend/'
+        },
         devtool: mode==='development' ? 'eval' : false,
         mode: mode
     }
