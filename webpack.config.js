@@ -36,6 +36,7 @@ module.exports = (env, argv) => {
     return {
         ...config,
         output: {
+            ...config.output,
             publicPath: mode==='development' ? '/' : '/react-frontend/'
         },
         devtool: mode==='development' ? 'eval' : false,
